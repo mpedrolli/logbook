@@ -17,6 +17,13 @@ fi
 echo -n "Please enter the topic of this journal: "
 read TOPIC
 
-$LOGBOOK_EDITOR $LOGBOOK_DIR/$DATE-$TOPIC.$LOGBOOK_FILE_EXTENSION
+LOGBOOK_FILE_NAME=$DATE-$TOPIC.$LOGBOOK_FILE_EXTENSION
+
+
+echo "==============================" > $LOGBOOK_DIR/$LOGBOOK_FILE_NAME
+echo "$DATE - $TOPIC" >> $LOGBOOK_DIR/$LOGBOOK_FILE_NAME
+echo "==============================" >> $LOGBOOK_DIR/$LOGBOOK_FILE_NAME
+
+$LOGBOOK_EDITOR $LOGBOOK_DIR/$LOGBOOK_FILE_NAME
 
 
